@@ -32,9 +32,9 @@ export class NewsapiService {
   constructor(private http: HttpClient) { }
 
   apikey = "47cebc07da07430ab2a35d659d175e35";
-  baseUrl = "https://newsapi.org/v2/top-headlines";
+  baseUrl = "https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines";
   country: string = ""
-  catagory:string=""
+  catagory: string = ""
 
 
   topheading(): Observable<any> {
@@ -49,7 +49,7 @@ export class NewsapiService {
     // console.log(name, name);
   }
 
-  catagoryname(name:string){
- this.catagory=name;
+  catagoryname(name: string) {
+    this.catagory = name;
   }
 }
