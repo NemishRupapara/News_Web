@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+.card{
+  height: 620px;
+    margin-top: 25px;
+}
+.first{
+    
+    border-left: 10px solid rgb(255, 39, 39);
+
+}
+.navv{
+    border:1px solid rgb(180, 180, 180); ;
+}
+.navbar {
+  width: 100%;
+    overflow: hidden;
+    background-color: #fefefe;
+    position: fixed;
+    top: 0;
+    z-index: 2;  
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+  .mains1 {
+    /* z-index: 1; */
+    /* position: fixed; */
+    background-color: #e3e3e3;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+  }
+  /* Custom CSS for the fixed position dropdown */
+.fixed-dropdown {
+  position: fixed;
+  top: 0;
+  right: 0; /* Adjust this value as needed to position the dropdown */
+  z-index: 1000; /* Ensure a high z-index to be above other elements */
+}
+
+/* Ensure dropdown content displays above other elements */
+.fixed-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Display dropdown content below the button */
+  right: 0; /* Adjust this value to align it with the button */
+  z-index: 1001; /* Ensure a higher z-index than the dropdown button */
+}
+
+.source{
+  position: relative;
+    background-color: rgb(207, 15, 15);
+    top: 43px;
+    z-index: 1;
+    color: #fefefe;
+    right: 15px;
+    border-radius: 6px;
+}
+img{
+  height: 320px;
+}
+.scroller-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px; /* Adjust the height as needed */
+  background-color: #ccc; /* Background color of the progress bar container */
+  z-index: 9999; /* Make it appear above other elements */
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #007bff; /* Color of the filled progress bar */
+  transition: width 0.3s ease; /* Add a smooth transition effect */
+}

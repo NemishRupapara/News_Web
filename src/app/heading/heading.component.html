@@ -1,0 +1,187 @@
+<!-- <div class="d-inline-flex ">
+  <div class=""> -->
+<!-- <div class="display-5 m-3 text-danger first ps-4 ">Web News</div> -->
+<!-- <div class="mainns">
+<div class="d-flex justify-content-between pt-2 navv">
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs"> -->
+<!-- <li [ngbNavItem]="1">
+		<button ngbNavLink routerLink="Home">Home</button>
+		
+	</li> -->
+<!-- <li [ngbNavItem]="1">
+    <img ngbNavLink src="assets\icons8-google-news-50.png" />
+  </li>
+  <li [ngbNavItem]="2">
+    <button ngbNavLink (click)="catagoryname('general')">General</button>
+  </li>
+  <li [ngbNavItem]="3">
+    <button ngbNavLink (click)="catagoryname('entertainment')">
+      Entertainment
+    </button>
+  </li>
+  <li [ngbNavItem]="4">
+    <button ngbNavLink (click)="catagoryname('business')">Business</button>
+  </li>
+  <li [ngbNavItem]="5">
+    <button ngbNavLink (click)="catagoryname('technology')">Technology</button>
+  </li>
+  <li [ngbNavItem]="6">
+    <button ngbNavLink (click)="catagoryname('sports')">Sports</button>
+  </li>
+  <li [ngbNavItem]="7">
+    <button ngbNavLink (click)="catagoryname('science')">Science</button>
+  </li>
+  <li [ngbNavItem]="8">
+    <button ngbNavLink (click)="catagoryname('health')">Health</button>
+  </li>
+</ul> -->
+
+<!-- <div class="d-inline-block" > 
+  <div [ngbNavOutlet]="nav" class=""></div>
+  </div>
+</div> -->
+<!-- businessentertainmentgeneralhealthsciencesportstechnology. -->
+
+<!-- </div> -->
+<!-- <div *ngxSpinner="loadingSpinner; name: 'spinner'"> -->
+  <!-- This will show the spinner while loadingSpinner is true -->
+  <!-- <ngx-spinner></ngx-spinner>
+</div> -->
+
+
+<div class="scroller-container">
+  <div class="progress-bar" [style.width]="scrollProgress + '%'"></div>
+</div>
+
+<div class="navbar">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light" (click)="catagoryname('general')">
+        General
+      </button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light  " (click)="catagoryname('entertainment')">Entertainment</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light  " (click)="catagoryname('business')">Business</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light  " (click)="catagoryname('technology')">Technology</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light  " (click)="catagoryname('sports')">Sports</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light ms-3 me-3" (click)="catagoryname('science')">Science</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <button type="button" class="btn btn-light ms-3 me-3" (click)="catagoryname('health')">Health</button>
+    </div>
+    <div class="col-12 col-md-auto">
+      <div class="fixed-dropdown mt-2 me-3">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Country
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="countryname('in')">India</button>
+          <button ngbDropdownItem (click)="countryname('us')">Usa</button>
+          <button ngbDropdownItem (click)="countryname('au')">Australia</button>
+          <button ngbDropdownItem (click)="countryname('cn')">Chin</button>
+          <button ngbDropdownItem (click)="countryname('de')">Germany</button>
+          <button ngbDropdownItem (click)="countryname('jp')">Japan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- <ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <button ngbNavLink>First</button>
+    <ng-template ngbNavContent>First content</ng-template>
+  </li>
+  <li ngbNavItem>
+    <button ngbNavLink>Second</button>
+    <ng-template ngbNavContent>Second content</ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div> -->
+
+<div class="container-fluid pt-3 mt-5 mains">
+  <div class="row m-3">
+    <!-- <div *ngIf=""> -->
+    <!-- <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let news of headingdisplay"  [ngStyle]="{'display': news.content === '[Removed]' || news.content === null ? 'none' : 'block'}"> -->
+    <div
+    
+      class="col-lg-4 col-md-6 col-sm-12"
+      *ngFor="
+      let news of headingdisplay
+      | paginate : { itemsPerPage: 9, currentPage: p }
+      "
+      >
+      <!-- [ngStyle]="{'display': news.content === 'Mrunal Thakur turns enthralling ethnic diva' ? 'none' : 'block'}" -->
+      <!-- <div *ngIf="news.content!=='[Removed]'"> -->
+        <div class="d-flex justify-content-end">
+        <div class="source py-1 px-2">{{news.source.name}}</div>
+      </div>
+      <div class="card">
+        <!-- <div class="card" style="width: 18rem;"> -->
+          
+        <img
+          class="card-img-top"
+          [src]="
+            news.urlToImage ||
+            'https://st4.depositphotos.com/14953852/22772/v/450/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg'
+          "
+          width="100%"
+        />
+      
+        <div class="card-body">
+          <div>
+            <div class="">
+              <span
+                ><b>Autor :  </b
+                >{{ news.author || "Auther name is not available" }}</span
+              >
+            </div>
+            <div class="">
+              <span class="text-end"
+                ><b>Date : </b
+                >{{ news.publishedAt || "Date is not available" | date:'d MMM, y, h:mm a'}}</span
+              >
+            </div>
+          </div>
+          <h5 class="card-title mt-3">
+            <!-- {{ news.title || "Title is not available" }} -->
+            {{ (news.title || "itle is not available" .length>70)? (news.title | slice:0:70)+'...':(news.title) }}
+
+          </h5>
+          
+          <p class="card-text">
+            {{ news.content || "I'm sorry, but the content you are looking for is not available. We apologize for any inconvenience this may cause. Our team is constantly working to improve our services and provide you with the best possible experience. " }} 
+            
+            <!-- {{ (news.content || "Description is not available" .length>80)? (news.content | slice:0:80)+'...':(news.content) }} -->
+          </p>
+          
+
+
+          <a href="{{ news.url }}" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+
+<div class="text-center">
+  <pagination-controls (pageChange)="p = $event" class=""></pagination-controls>
+</div>
